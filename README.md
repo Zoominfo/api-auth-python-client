@@ -1,4 +1,6 @@
 # api-auth-python-client
+To use this library you need to install the library *epi_auth_client* using pip.
+
 This library supports 2 types of authentication methods. Both the methods return a JWT token which you can use to make
 api calls for enterprise-api on production.
 
@@ -7,15 +9,15 @@ api calls for enterprise-api on production.
 <h4>Username and password authentication:</h4>
 Usage:
 <ol> 
-<li>auth_client = AuthClient("your_user_name") </li>
-<li>jwt_token = auth_client.user_name_pwd_authentication("your_password") // returns the JWT token </li>
+<li>import epi_auth_client</li>
+<li>jwt_token = epi_auth_client.user_name_pwd_authentication("your_user_name", "your_password") </li>
 </ol>
 <li>
 <h4>PKI authentication:</h4> This type of authentication needs a private key and a client ID to generate the JWT token.
 <br> Usage:
 <ol> 
 <li>
-auth_client = AuthClient("your_user_name")
+import epi_auth_client
 </li>
 <li>
 Paste your private key.
@@ -26,12 +28,12 @@ Your private key goes here
 -----END PRIVATE KEY-----'''
 </code></pre>
 </li> 
-<li>jwt_token = auth_client.pki_authentication("your_client_id", key) // returns the JWT token </li>
+<li>jwt_token = epi_auth_client.pki_authentication("your_user_name", "your_client_id", key) </li>
 </ol>
 </ol>
 
 **Note: If you get the error "ValueError: Could not deserialize key data." when doing PKI authentication, make sure that
-your private key is properly formatted. Paste the private key as a multi-line string in python.**
+your private key has been properly formatted. Paste the private key as a multi-line string in python.**
 
 *Correct way*: The following is the right way to paste your private key.
 <pre><code>

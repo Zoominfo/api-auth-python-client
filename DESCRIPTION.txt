@@ -1,0 +1,63 @@
+epi_auth_client
+==============================
+
+This library supports 2 types of authentication methods. Both the methods return a JWT token which you can use to make
+api calls for enterprise-api on production.
+
+Username and password authentication:
+============================================================
+
+**Usage:**
+
+1. import epi_auth_client
+
+2. jwt_token = epi_auth_client.user_name_pwd_authentication("your_user_name", "your_password")
+
+PKI authentication:
+==============================
+
+This type of authentication needs a private key and a client ID to generate the JWT token.
+
+**Usage:**
+
+1. import epi_auth_client
+
+2. Paste your private key:
+
+        key = '''
+
+        -----BEGIN PRIVATE KEY-----
+
+        Your private key goes here
+
+        -----END PRIVATE KEY-----'''
+
+3. jwt_token = epi_auth_client.pki_authentication("your_user_name", "your_client_id", key)
+
+**Note: If you get the error "ValueError: Could not deserialize key data." when doing PKI authentication, make sure that your private key is properly formatted. Paste the private key as a multi-line string in python.**
+
+**Correct way:**
+
+The following is the right way to paste your private key.
+
+
+    '''
+
+    -----BEGIN PRIVATE KEY-----
+
+    Your private key goes here
+
+    -----END PRIVATE KEY-----'''
+
+**Wrong way:**
+
+Pasting the private key as follows would throw the error "ValueError: Could not deserialize key data." because there are extra spaces on each line in the key.
+
+
+       '''
+
+            -----BEGIN PRIVATE KEY-----
+
+            Your private key goes here
+
+            -----END PRIVATE KEY-----'''
