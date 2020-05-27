@@ -1,4 +1,4 @@
-epi_auth_client
+zi_api_auth_client
 ==============================
 
 This library supports 2 types of authentication methods. Both the methods return a JWT token which you can use to make
@@ -9,9 +9,9 @@ Username and password authentication:
 
 **Usage:**
 
-1. import epi_auth_client
+1. import zi_api_auth_client
 
-2. jwt_token = epi_auth_client.user_name_pwd_authentication("your_user_name", "your_password")
+2. jwt_token = zi_api_auth_client.user_name_pwd_authentication("your_user_name", "your_password")
 
 PKI authentication:
 ==============================
@@ -20,7 +20,7 @@ This type of authentication needs a private key and a client ID to generate the 
 
 **Usage:**
 
-1. import epi_auth_client
+1. import zi_api_auth_client
 
 2. Paste your private key:
 
@@ -32,7 +32,7 @@ This type of authentication needs a private key and a client ID to generate the 
 
         -----END PRIVATE KEY-----'''
 
-3. jwt_token = epi_auth_client.pki_authentication("your_user_name", "your_client_id", key)
+3. jwt_token = zi_api_auth_client.pki_authentication("your_user_name", "your_client_id", key)
 
 **Note: If you get the error "ValueError: Could not deserialize key data." when doing PKI authentication, make sure that your private key is properly formatted. Paste the private key as a multi-line string in python.**
 

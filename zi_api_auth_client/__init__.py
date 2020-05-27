@@ -1,4 +1,4 @@
-from .epi_auth_client import AuthClient
+from .zi_api_auth_client import AuthClient
 
 
 def user_name_pwd_authentication(user_name, password):
