@@ -19,7 +19,7 @@ class AuthClient:
         self.hashing_algorithm = 'RS256'
 
     def user_name_pwd_authentication(self, password):
-        headers = {'Accept': "application/json"}
+        headers = {'Accept': "application/json", 'user-agent': ""}
         request_body = {'username': self.user_name, 'password': password}
         response = requests.post(self.authenticate_url, headers=headers, data=request_body)
         if not response.ok:
@@ -31,7 +31,7 @@ class AuthClient:
 
     def _post_and_get_jwt(self, client_id, private_key):
         client_jwt = self._get_client_jwt(client_id, private_key)
-        headers = {'Authorization': f"Bearer {client_jwt}", 'Accept': "application/json"}
+        headers = {'Authorization': f"Bearer {client_jwt}", 'Accept': "application/json", 'user-agent': ""}
         response = requests.post(self.authenticate_url, headers=headers)
         if not response.ok:
             raise RuntimeError(response.text)
