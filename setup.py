@@ -15,7 +15,7 @@ CLASSIFIERS = [
 
 # calling the setup function
 setuptools.setup(name='zi_api_auth_client',
-      version='1.0.0',
+      version='1.0.1',
       description='A library that supports username-password and PKI authentication methods for enterprise-api',
       long_description=long_description,
       url='https://github.com/Zoominfo/api-auth-python-client',
