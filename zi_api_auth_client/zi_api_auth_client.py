@@ -49,7 +49,8 @@ class AuthClient:
             'username': self.user_name
         }
         encoded_jwt = jwt.encode(claims, private_key, algorithm=self.hashing_algorithm)
-        return encoded_jwt.decode("utf-8")
+        # `PyJWT` switched to returning a string in v2.0.0
+        return encoded_jwt.decode("utf-8") if isinstance(encoded_jwt, bytes) else encoded_jwt
 
     def _extract_jwt_from_text(self, text_input):
         json_response = json.loads(text_input)
