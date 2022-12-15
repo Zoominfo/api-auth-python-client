@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Major change
 
-- Fix: Follow up to the fix of [#4](https://github.com/Zoominfo/api-auth-python-client/issues/4) in `1.0.2` #4
+- Fix: Follow up to the fix of [#4](https://github.com/Zoominfo/api-auth-python-client/issues/4) in `1.0.2` [#5](https://github.com/Zoominfo/api-auth-python-client/pull/5)
   - Ensure we support status code in the error response
 
 When you upgrade, make sure to handle `HttpError` instead of `RuntimeError`.
