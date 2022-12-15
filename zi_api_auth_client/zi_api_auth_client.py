@@ -24,7 +24,8 @@ class AuthClient:
         request_body = {'username': self.user_name, 'password': password}
         response = requests.post(self.authenticate_url, headers=headers, data=request_body)
         if not response.ok:
-            raise RuntimeError(response.text)
+            response.reason = response.text
+            return response.raise_for_status()
         return self._extract_jwt_from_text(response.text)
 
     def pki_authentication(self, client_id, private_key):
@@ -35,7 +36,8 @@ class AuthClient:
         headers = {'Authorization': f"Bearer {client_jwt}", 'Accept': "application/json", 'user-agent': ""}
         response = requests.post(self.authenticate_url, headers=headers)
         if not response.ok:
-            raise RuntimeError(response.text)
+            response.reason = response.text
+            return response.raise_for_status()
         return self._extract_jwt_from_text(response.text)
 
     def _get_client_jwt(self, client_id, private_key):
