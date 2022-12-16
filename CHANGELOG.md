@@ -15,6 +15,6 @@ When you upgrade, make sure to handle `HttpError` instead of `RuntimeError`.
 
 ### Changed features
 
-- Update `PyJwt` to latest version 2.6.0
-- Update `requests` to latest version 2.28.1
-- Update `cryptography` to latest version 38.0.4
+- Update `PyJwt` to latest version `2.6.0`
+- Update `requests` to latest version `2.28.1`
+- Update `cryptography` to latest version `38.0.4`
