@@ -5,7 +5,7 @@ with open('DESCRIPTION.txt') as file:
     long_description = file.read()
 
 # external packages requirements
-REQUIREMENTS = ['PyJWT==2.6.0', 'requests==2.28.1', 'cryptography==38.0.4']
+REQUIREMENTS = ['PyJWT==2.6.0', 'requests==2.28.1', 'cryptography==41.0.0']
 
 CLASSIFIERS = [
     "License :: OSI Approved :: MIT License",
