@@ -5,7 +5,11 @@ with open('DESCRIPTION.txt') as file:
     long_description = file.read()
 
 # external packages requirements
-REQUIREMENTS = ['PyJWT==2.6.0', 'requests==2.31.0', 'cryptography==41.0.6']
+REQUIREMENTS = [
+    'PyJWT>=2.6.0,<3.0.0',
+    'requests>=2.32.4,<3.0.0',
+    'cryptography>=41.0.6'
+]
 
 CLASSIFIERS = [
     "License :: OSI Approved :: MIT License",
@@ -14,7 +18,7 @@ CLASSIFIERS = [
 
 # calling the setup function
 setuptools.setup(name='zi_api_auth_client',
-                 version='2.0.1',
+                 version='2.0.3',
                  description='A library that supports username-password and PKI authentication methods for enterprise-api',
                  long_description=long_description,
                  url='https://github.com/Zoominfo/api-auth-python-client',
